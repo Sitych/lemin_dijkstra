@@ -44,7 +44,7 @@ t_queue		*ft_push(t_queue *head, char *data)
 // 		return (ptr);
 // 	}
 // 	start = head;
-// 	while (start->next != NULL &&\
+// 	while (start->next != NULL &&
 // 						ft_find_data(start->name)->bfs_level < room->bfs_level)
 // 		start = start->next;
 // 	ptr->next = start->next;

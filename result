@@ -1,0 +1,54 @@
+split
+100
+start
+bond
+init
+val_room
+14
+check
+name = 0 bfs_level = 1 in = 0 out = 0
+link name = start len = 0
+link name = 1 len = 0
+link name = x len = 0
+name = 1 bfs_level = 2 in = 0 out = 0
+link name = 0 len = 0
+link name = 2 len = 0
+link name = x len = 0
+name = 2 bfs_level = 3 in = 0 out = 0
+link name = 1 len = 0
+link name = end len = 0
+name = 3 bfs_level = 1 in = 0 out = 0
+link name = start len = 0
+link name = 4 len = 0
+name = 4 bfs_level = 2 in = 0 out = 0
+link name = 3 len = 0
+link name = 5 len = 0
+name = 5 bfs_level = 3 in = 0 out = 0
+link name = 4 len = 0
+link name = end len = 0
+name = 6 bfs_level = 1 in = 0 out = 0
+link name = start len = 0
+link name = end len = 0
+name = x bfs_level = 2 in = 0 out = 0
+link name = 1 len = 0
+link name = 0 len = 0
+link name = end len = 0
+name = end bfs_level = 2147483647 in = 0 out = 0
+link name = 2 len = 0
+link name = x len = 0
+link name = 5 len = 0
+link name = 6 len = 0
+link name = start len = 0
+name = start bfs_level = 0 in = 0 out = 0
+link name = 0 len = 0
+link name = 3 len = 0
+link name = 6 len = 0
+link name = end len = 0
+name = 1 bfs_level = 2 in = 0 out = 0
+link name = 0 len = 0
+link name = 2 len = 0
+link name = x len = 0
+name = 1 bfs_level = 2 in = 0 out = 0
+link name = 0 len = 0
+link name = 2 len = 0
+link name = x len = 0

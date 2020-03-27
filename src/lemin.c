@@ -65,10 +65,10 @@ int		main(void)
 	// ft_print(ft_find_data("1"));
 	// ft_del_useless_links("1");
 	// ft_print(ft_find_data("1"));
-	ft_putstr("check\n");
-	t_room *ptr = ft_find_start();
-	ft_manage_way(ptr->name);
-	ft_thprint();
+	// ft_putstr("check\n");
+	// t_room *ptr = ft_find_start();
+	// ft_manage_way(ptr->name);
+	// ft_thprint();
 	// ft_output_fork(ft_find_end()->name);
 	// ft_manage_way(ptr->name); //x2 da pohui che b i ne vizvat'
 	// ft_path_forming(q);

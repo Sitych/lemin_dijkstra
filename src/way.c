@@ -70,12 +70,10 @@ int			ft_manage_way(char *data)
 	ft_del_useless_links(data);
 	room->in = ft_count_input(data);
 	link = room->links;
-		ft_print(room);
 	while (link != NULL)
 	{
 		if (ft_find_data(link->name)->bfs_level > room->bfs_level)
 		{
-			ft_print(room);
 			count = ft_manage_way(link->name);
 			if (count == 0)
 				ft_del_from_links(&link);

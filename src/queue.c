@@ -30,27 +30,27 @@ t_queue		*ft_push(t_queue *head, char *data)
 	return (head);
 }
 
-// t_queue		*ft_push_priority(t_queue *head, char *data)
-// {
-// 	t_queue	*ptr;
-// 	t_queue	*start;
-// 	t_room	*room;
+t_queue		*ft_push_priority(t_queue *head, char *data)
+{
+	t_queue	*ptr;
+	t_queue	*start;
+	t_room	*room;
 
-// 	room = ft_find_data(data);
-// 	ptr = ft_creat_elem(data);
-// 	if (head == NULL)
-// 	{
-// 		head = ptr;
-// 		return (ptr);
-// 	}
-// 	start = head;
-// 	while (start->next != NULL &&
-// 						ft_find_data(start->name)->bfs_level < room->bfs_level)
-// 		start = start->next;
-// 	ptr->next = start->next;
-// 	start->next = ptr;
-// 	return (head);
-// }
+	room = ft_find_data(data);
+	ptr = ft_creat_elem(data);
+	if (head == NULL)
+	{
+		head = ptr;
+		return (ptr);
+	}
+	start = head;
+	while (start->next != NULL &&
+						ft_find_data(start->name)->bfs_level < room->bfs_level)
+		start = start->next;
+	ptr->next = start->next;
+	start->next = ptr;
+	return (head);
+}
 
 t_queue		*ft_pop(t_queue **head)
 {

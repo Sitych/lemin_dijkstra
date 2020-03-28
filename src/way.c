@@ -60,30 +60,46 @@ int			ft_count_input(char *data)
 
 int			ft_manage_way(char *data)
 {
-	if (!ft_strcmp(ft_find_end()->name, data))
-		return (INT_MAX);
 	t_room	*room;
-	t_edge	*link;
+	t_edge	*start;
 	int		count;
 
+	if (!ft_strcmp(ft_find_end()->name, data))
+		return (0);
 	room = ft_find_data(data);
 	ft_del_useless_links(data);
-	room->in = ft_count_input(data);
-	link = room->links;
-	while (link != NULL)
+	start = room->links;
+	count = -1;
+	while (room->links != NULL)
 	{
-		if (ft_find_data(link->name)->bfs_level > room->bfs_level)
+		if (ft_find_data(room->links->name)->bfs_level > room->bfs_level)
 		{
-			count = ft_manage_way(link->name);
-			if (count == 0)
-				ft_del_from_links(&link);
-			ft_print(room);
+			count = ft_manage_way(room->links->name);
+			if (count == -1)
+			{
+				ft_del_from_links(&(room->links));
+				if (room->links != NULL)
+				{
+					if (room->links->prev == NULL)
+					{
+						start = room->links;
+						continue ;
+					}
+				}
+				else
+					break ;
+			}
+			else
+				room->links->len = count;
 		}
-		link = link->next;
+		room->links = room->links->next;
 	}
-	room->out = ft_count_output(data);
-	return (room->out);
+	room->links = start;
+	return (count + 1);
 }
+
+
+
 /*
 void		ft_path_forming(int ants)
 {

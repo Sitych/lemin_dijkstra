@@ -31,6 +31,7 @@ typedef struct			s_room
 	int					y;
 	int					num_links;
 	t_edge				*links;
+	int					flag;
 	int					out;
 	int					in;
 }						t_room;
@@ -138,7 +139,7 @@ typedef struct			s_path
 	struct s_path		*prev;
 }						t_path;
 
-void			ft_del_from_links(t_edge **ptr);
+int			ft_del_from_links(t_edge **ptr);
 void		ft_del_useless_links(char *data);
 int			ft_manage_way(char *data);
 int			ft_count_output(char *data);

@@ -73,17 +73,19 @@ t_room		*ft_insert_link(char *room, char *link)
 {
 	t_room	*p;
 	t_edge	*links;
+	t_edge	*insert;
 
 	p = ft_find_data(room);
+	insert = ft_creat_edge(link);
 	if (p->links == NULL)
 	{
-		p->links = ft_creat_edge(link);
+		p->links = insert;
 		return (p);
 	}
 	links = p->links;
 	while (links->next != NULL)
 		links = links->next;
-	links->next = ft_creat_edge(link);
-	(links->next)->prev = links;
+	links->next = insert;
+	insert->prev = links;
 	return (p);
 }

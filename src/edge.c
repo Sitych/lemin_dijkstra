@@ -20,24 +20,47 @@ void		ft_del_edge(t_edge *ptr)
 	free(ptr);
 }
 
-void		ft_del_from_links(t_edge **ptr)
+int		ft_del_from_links(t_edge **ptr)
 {
+	t_edge	*prev;
+	t_edge	*next;
 	t_edge	*tmp;
 
-	if ((*ptr)->prev == NULL)
-	{
-		tmp = *ptr;
-		*ptr = (*ptr)->next;
-		(*ptr)->prev = NULL;
-	}
+	prev = (*ptr)->prev;
+	next = (*ptr)->next;
+	if (prev != NULL)
+		prev->next = (*ptr)->next;
+	if (next != NULL)
+		next->prev = (*ptr)->prev;
+	tmp = *ptr;
+	if (prev != NULL)
+		*ptr = prev;
 	else
-	{
-		tmp = *ptr;
-		*ptr = (*ptr)->prev;
-		(*ptr)->next = tmp->next;
-		if ((*ptr)->next != NULL)
-			(*ptr)->next->prev = *ptr;
-	}
+		*ptr = next;
 	ft_del_edge(tmp);
-	return ;
+	return (1);
 }
+
+
+// void		ft_del_from_links(t_edge **ptr)
+// {
+// 	t_edge	*tmp;
+
+// 	if ((*ptr)->prev == NULL)
+// 	{
+// 		tmp = *ptr;
+// 		*ptr = (*ptr)->next;
+// 		if (*ptr != NULL)
+// 			(*ptr)->prev = NULL;
+// 	}
+// 	else
+// 	{
+// 		tmp = *ptr;
+// 		*ptr = (*ptr)->prev;
+// 		(*ptr)->next = tmp->next;
+// 		if ((*ptr)->next != NULL)
+// 			(*ptr)->next->prev = *ptr;
+// 	}
+// 	ft_del_edge(tmp);
+// 	return ;
+// }

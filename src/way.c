@@ -84,6 +84,7 @@ int			ft_manage_way(char *data)
 	room->out = ft_count_output(data);
 	return (room->out);
 }
+
 /*
 void		ft_path_forming(int ants)
 {

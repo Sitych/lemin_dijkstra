@@ -1,27 +1,19 @@
 #include "lem_in.h"
 
-void		ft_init_len(void)
+t_path		**ft_create_path1(t_room *start)
 {
-	t_room	*room;
+	t_queue	*q;
 	t_queue	*ptr;
-	t_queue	*elem;
-	t_edge	*edge;
+	t_edge	*link;
 
-	ptr = ft_creat_elem(ft_find_end()->name);
-	while (ft_isempty(ptr))
+	q = ft_creat_elem(start->name);
+	while (ft_isempty(q))
 	{
-		elem = ft_pop(&ptr);
-		room = ft_find_data(elem->name);
-		edge = room->links;
-		while (edge != NULL)
+		ptr = ft_pop(q);
+		link = ft_find_data(ptr->name)->links;
+		while (link != NULL)
 		{
-			if (ft_find_data(edge->name)->bfs_level < room->bfs_level)
-			{
-				
-				ptr = ft_push(ptr, edge->name);
-			}
-			edge = edge->next;
+			if (flag == 0 && )
 		}
-		ft_del_elem(&elem);
 	}
 }

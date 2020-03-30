@@ -61,14 +61,19 @@ int		main(void)
 	int q = ft_file_checker(split, all);
 	q = 1 + q -1;
 	ft_init_bfs_level();
-	ft_thprint();
+	// ft_print(ft_find_end());
+	// ft_del_from_links(&(ft_find_end()->links));
+	// ft_print(ft_find_end());
 	// ft_print(ft_find_data("1"));
 	// ft_del_useless_links("1");
 	// ft_print(ft_find_data("1"));
 	// ft_putstr("check\n");
-	// t_room *ptr = ft_find_start();
-	// ft_manage_way(ptr->name);
-	// ft_thprint();
+	ft_thprint();
+	t_room *ptr = ft_find_start();
+	ft_printf("\n");
+	ft_manage_way(ptr->name);
+	ft_printf("\n");
+	ft_thprint();
 	// ft_output_fork(ft_find_end()->name);
 	// ft_manage_way(ptr->name); //x2 da pohui che b i ne vizvat'
 	// ft_path_forming(q);

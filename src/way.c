@@ -98,8 +98,6 @@ int			ft_manage_way(char *data)
 	return (count + 1);
 }
 
-
-
 /*
 void		ft_path_forming(int ants)
 {
